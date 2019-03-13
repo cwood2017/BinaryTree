@@ -1,19 +1,20 @@
-#ifndef binaryT_H
-#define binaryT_H
+#ifndef binaryTree_H
+#define binaryTree_H
+#include <stdbool.h>
+
+typedef struct node_struct
+{
+    int data;
+    struct node_struct* left;
+    struct node_struct* right;
+} node;
 
 typedef struct binary_tree_struct
 {
   int size;
   node* root;
-} binary_ tree;
+} binary_tree;
 
-typedef struct node_struct
-{
-  int data;
-  struct node_struct* left;
-  struct node_struct* right;
-} node;
-   
    
 void initialize(binary_tree* bt);
 bool search(binary_tree* bt, int key);

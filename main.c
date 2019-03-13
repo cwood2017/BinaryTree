@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include "binary_tree.h"
+#include "binary_tree.h"
 #include <string.h> /*for strlen if needed later */
 
 int main(int argc, char* argv[]) {
@@ -10,11 +10,11 @@ int main(int argc, char* argv[]) {
     int nodeList[1000];
     /* readNode used to read nodes in from file */
     int readNode;
-    /*used to clear buffer */
+    /*used to clear buffer if needed- not used now */
     char c;
     /* endOfFile used for reading in node list. Can't be zero to start */
     int endOfFile=1;
-    /* int cursor for iterating */
+    /* int cursor for iterating- may not need in final draft */
     int cursor = 0;
     int i;
 
@@ -27,7 +27,9 @@ int main(int argc, char* argv[]) {
         printf("Could not open file.\n");
         return -1; // -1 indicates error
     }
-/* load nodes into nodeList */
+/* load nodes into nodeList array */
+/* note: we can load directly into our binary tree in the
+ * final version.  this is just to play around with */
     while (!feof(inFile)) {
         if (endOfFile != 0) {
             fscanf(inFile, "%d", &readNode);
@@ -35,13 +37,15 @@ int main(int argc, char* argv[]) {
             cursor++;
         }
     }
+    /*for debugging- delete in final version*/
     for (i=0; i<cursor; i++) {
         printf("%d\n",nodeList[i]);
     }
+    /*for debugging- delete in final version*/
     printf("number of nodes:  %d", cursor);
 
 
-/*
+/* commented out because &bt is undefined
     printf("Print in order\n");
     printinorder(&bt);
     printf("\nPrint pre order\n");
