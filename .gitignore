@@ -1,0 +1,6 @@
+#delete # sign to prevent commiting main.c
+#main.c
+
+.idea/
+cmake-build-debug/
+CMakeLists.txt
