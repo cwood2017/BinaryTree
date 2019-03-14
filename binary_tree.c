@@ -112,9 +112,19 @@ void insert(binary_tree* bt, int item) {
     /* printf("inserted %d,  flag  %d\n", newNode->data, flag); */
 }
 
+void preOrder(node* curr){
+if(curr == NULL){
+    return;
+}
+printf("%d ", curr->data);
+preOrder(curr->left);
+preOrder(curr->right);
 
-void printpreorder(binary_tree* bt)
-{
+}
+void printpreorder(binary_tree* bt){
+    node* curr = bt->root;
+    preOrder(curr);
+
 }
 
 void pOrder(node* curr) {
