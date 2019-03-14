@@ -1,20 +1,12 @@
 #include <stdio.h>
 #include "binary_tree.h"
 #include <string.h> /*for strlen if needed later */
-#include <malloc.h>
-
-
 
 int main(int argc, char* argv[]) {
-
-    binary_tree *bt;
-    bt=malloc(sizeof(struct binary_tree_struct));
-    initialize(bt);
-
     FILE *inFile = NULL; // File pointer
     /* TODO change to malloc based on strlen of arg[1] */
     char fileName[50];
-    /* assumes no more than 1000 numbers in input file- for debugging */
+    /* assumes no more than 1000 numbers in input file */
     int nodeList[1000];
     /* readNode used to read nodes in from file */
     int readNode;
@@ -50,14 +42,9 @@ int main(int argc, char* argv[]) {
         printf("%d\n",nodeList[i]);
     }
     /*for debugging- delete in final version*/
-    printf("number of nodes:  %d\n", cursor);
+    printf("number of nodes:  %d", cursor);
 
-    for (i=0; i<cursor; i++) {
-        //printf("%d\n",nodeList[i]);
-        insert(bt, nodeList[i]);
-    }
-    printf("height: %d\n", treeheight(bt));
-/* commented out because &bt is undefined
+
     printf("Print in order\n");
     printinorder(&bt);
     printf("\nPrint pre order\n");
@@ -75,5 +62,4 @@ int main(int argc, char* argv[]) {
     }
     printf("Number of elements in tree: %d\n", btsize(&bt));
     printf("Tree height: %d\n", treeheight(&bt));
-    */
 }
