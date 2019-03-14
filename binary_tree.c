@@ -7,21 +7,6 @@
 #include <malloc.h>
 #include <stdio.h>
 
-int max(int a, int b) {
-    if (a>b) return a;
-    else return b;
-}
-
-int recurseTree(node* n) {
-    int left = 0;
-    int right = 0;
-    if (n == 0) return 0;
-    left = recurseTree(n->left);
-    right = recurseTree(n->right);
-    return max(left,right)+1;
-
-}
-
 
 void initialize(binary_tree* bt) {
     bt->size = 0;
@@ -29,20 +14,20 @@ void initialize(binary_tree* bt) {
 };
 
 bool search(binary_tree* bt, int key) {
-struct node_struct currentNode = bt->root
+    node* currentNode = bt -> root;
 
-while (currentNode != NULL) {
-if (key == currentNode->data) {
-return currentNode;
-}
-else if (key< currentNode->data) {
-currentNode = currentNode->left;
-}
-else {
-currentNode = currentNode->right;
-}
-} 
-return null;
+    while (currentNode != NULL) {
+        if (key == currentNode->data) {
+            return currentNode;
+        }
+        else if (key< currentNode->data) {
+            currentNode = currentNode->left;
+        }
+        else {
+            currentNode = currentNode->right;
+        }
+    } 
+    return NULL;
 }
 
 void insert(binary_tree* bt, int item) {
@@ -165,8 +150,8 @@ void ptorder(node* curr){
     if(curr == NULL){
         return;
     }
-    postorder(curr->left);
-    postorder(curr->right);
+    ptorder(curr->left);
+    ptorder(curr->right);
     printf("%d ", curr->data);
 }
 void printpostorder(binary_tree* bt){

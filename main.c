@@ -1,10 +1,15 @@
 #include <stdio.h>
 #include "binary_tree.h"
 #include <string.h> /*for strlen if needed later */
+#include <stdlib.h>
+#include <stdbool.h>
 
 int main(int argc, char* argv[]) {
     FILE *inFile = NULL; // File pointer
     /* TODO change to malloc based on strlen of arg[1] */
+    binary_tree* bt;
+    bt=malloc(sizeof(struct binary_tree_struct));
+    initialize(bt);
     char fileName[50];
     /* assumes no more than 1000 numbers in input file */
     int nodeList[1000];
@@ -39,27 +44,27 @@ int main(int argc, char* argv[]) {
     }
     /*for debugging- delete in final version*/
     for (i=0; i<cursor; i++) {
-        printf("%d\n",nodeList[i]);
+        insert(bt,nodeList[i]);
     }
     /*for debugging- delete in final version*/
     printf("number of nodes:  %d", cursor);
 
 
     printf("Print in order\n");
-    printinorder(&bt);
+    printinorder(bt);
     printf("\nPrint pre order\n");
-    printpreorder(&bt);
+    printpreorder(bt);
     printf("\nPrint post order\n");
-    printpostorder(&bt);
+    printpostorder(bt);
     printf("\n");
-    found = search(&bt, 33);
+    bool found = search(bt, 33);
     if (found) {
         printf("FOUND 33\n");
     }
-    found = search(&bt, 38);
+    found = search(bt, 38);
     if (found) {
         printf("FOUND 38\n");
     }
-    printf("Number of elements in tree: %d\n", btsize(&bt));
-    printf("Tree height: %d\n", treeheight(&bt));
+    printf("Number of elements in tree: %d\n", btsize(bt));
+    printf("Tree height: %d\n", treeheight(bt));
 }
