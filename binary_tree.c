@@ -12,8 +12,21 @@ void initialize(binary_tree* bt)
     bt->size = 0;
 }
 
-bool search(binary_tree* bt, int key)
-{
+bool search(binary_tree* bt, int key) {
+struct node_struct currentNode = bt->root
+
+while (currentNode != NULL) {
+if (key == currentNode->data) {
+return currentNode;
+}
+else if (key< currentNode->data) {
+currentNode = currentNode->left;
+}
+else {
+currentNode = currentNode->right;
+}
+} 
+return null;
 }
 
 void insert(binary_tree* bt, int item) {
