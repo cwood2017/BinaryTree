@@ -4,6 +4,7 @@
 
 #include "binary_tree.h"
 #include <stdbool.h>
+#include <stdio.h>
 
 void initialize(binary_tree* bt)
 {
