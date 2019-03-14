@@ -22,25 +22,34 @@ int recurseTree(node* n) {
 
 }
 
-/*
-typedef struct node_struct
-{
-    int data;
-    struct node_struct* left;
-    struct node_struct* right;
-} node;
 
-typedef struct binary_tree_struct
-{
-    int size;
-    node* root;
-} binary_tree;
-
-*/
 void initialize(binary_tree* bt) {
     bt->size = 0;
     bt->root = 0;
 };
+
+void initialize(binary_tree* bt)
+{
+    bt->root = NULL;
+    bt->size = 0;
+}
+
+bool search(binary_tree* bt, int key) {
+struct node_struct currentNode = bt->root
+
+while (currentNode != NULL) {
+if (key == currentNode->data) {
+return currentNode;
+}
+else if (key< currentNode->data) {
+currentNode = currentNode->left;
+}
+else {
+currentNode = currentNode->right;
+}
+} 
+return null;
+}
 
 void insert(binary_tree* bt, int item) {
     int flag = 0;
@@ -125,6 +134,57 @@ void insert(binary_tree* bt, int item) {
     /* printf("inserted %d,  flag  %d\n", newNode->data, flag); */
 }
 
+void printpreorder(binary_tree* bt)
+{
+}
+
+void pOrder(node* curr) {
+    if(curr == NULL){
+        return;
+    }
+    pOrder(curr->left);
+    printf("%d ", curr->data);
+    pOrder(curr->right);
+
+}
+void printinorder(binary_tree* bt){
+    node* curr = bt->root;
+    pOrder(curr);
+
+    return;
+
+}
+void ptorder(node* curr){
+    if(curr == NULL){
+        return;
+    }
+    postorder(curr->left);
+    postorder(curr->right);
+    printf("%d ", curr->data);
+}
+void printpostorder(binary_tree* bt){
+    node* curr = bt->root;
+    ptorder(curr);
+
+    return;
+}
+
+
+int max(int a, int b) {
+    if (a>b) return a;
+    else return b;
+}
+
+int recurseTree(node* n) {
+    int left = 0;
+    int right = 0;
+    if (n == 0) return 0;
+    left = recurseTree(n->left);
+    right = recurseTree(n->right);
+    return max(left,right)+1;
+
+}
+
 int treeheight(binary_tree* bt) {
     int height;
     height = recurseTree(bt->root);
@@ -134,3 +194,5 @@ int treeheight(binary_tree* bt) {
 int btsize(binary_tree* bt) {
     return bt->size;
 }
+
+
