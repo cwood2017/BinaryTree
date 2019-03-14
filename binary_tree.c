@@ -28,12 +28,6 @@ void initialize(binary_tree* bt) {
     bt->root = 0;
 };
 
-void initialize(binary_tree* bt)
-{
-    bt->root = NULL;
-    bt->size = 0;
-}
-
 bool search(binary_tree* bt, int key) {
 struct node_struct currentNode = bt->root
 
