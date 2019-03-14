@@ -7,6 +7,21 @@
 #include <malloc.h>
 #include <stdio.h>
 
+int max(int a, int b) {
+    if (a>b) return a;
+    else return b;
+}
+
+int recurseTree(node* n) {
+    int left = 0;
+    int right = 0;
+    if (n == 0) return 0;
+    left = recurseTree(n->left);
+    right = recurseTree(n->right);
+    return max(left,right)+1;
+
+}
+
 /*
 typedef struct node_struct
 {
@@ -108,4 +123,14 @@ void insert(binary_tree* bt, int item) {
     }
     /* for debug  */
     /* printf("inserted %d,  flag  %d\n", newNode->data, flag); */
+}
+
+int treeheight(binary_tree* bt) {
+    int height;
+    height = recurseTree(bt->root);
+    return height -1;
+}
+
+int btsize(binary_tree* bt) {
+    return bt->size;
 }

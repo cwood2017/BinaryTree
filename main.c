@@ -56,7 +56,7 @@ int main(int argc, char* argv[]) {
         //printf("%d\n",nodeList[i]);
         insert(bt, nodeList[i]);
     }
-
+    printf("height: %d\n", treeheight(bt));
 /* commented out because &bt is undefined
     printf("Print in order\n");
     printinorder(&bt);
