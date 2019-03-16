@@ -1,3 +1,8 @@
-9 5 1 7 2 12 8 4 3 11
-8 5 9 7 1 12 2 4 11 3
-9 1 2 12 7 5 3 11 4 8
+Print in order
+1 2 3 4 5 7 8 9 11 12 
+Print pre order
+1 2 3 4 5 7 8 9 11 12 
+Print post order
+12 11 9 8 7 5 4 3 2 1 
+Number of elements in tree: 10
+Tree height: 9

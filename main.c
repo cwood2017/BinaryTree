@@ -15,26 +15,27 @@ int main(int argc, char* argv[]) {
     int nodeList[1000];
     /* readNode used to read nodes in from file */
     int readNode;
-    /*used to clear buffer if needed- not used now */
-    char c;
     /* endOfFile used for reading in node list. Can't be zero to start */
     int endOfFile=1;
     /* int cursor for iterating- may not need in final draft */
     int cursor = 0;
     int i;
 
+    if (argc != 2) {
+        printf("The number of command line arguments is wrong.");
+        exit(1);
+    }
 
 /* Get filename from argument and open it*/
     strcpy(fileName, argv[1]);
     inFile = fopen(fileName, "r");
 /* error if can't open file */
     if (inFile == NULL) {
-        printf("Could not open file.\n");
-        return -1; // -1 indicates error
+        printf("Could not open file.");
+        exit(1); // -1 indicates error
     }
 /* load nodes into nodeList array */
-/* note: we can load directly into our binary tree in the
- * final version.  this is just to play around with */
+/* note: we can load directly into our binary tree  */
     while (!feof(inFile)) {
         if (endOfFile != 0) {
             fscanf(inFile, "%d", &readNode);
@@ -42,13 +43,12 @@ int main(int argc, char* argv[]) {
             cursor++;
         }
     }
-    /*for debugging- delete in final version*/
+    /*move from array into tree*/
     for (i=0; i<cursor; i++) {
         insert(bt,nodeList[i]);
     }
-    /*for debugging- delete in final version*/
-    printf("number of nodes:  %d", cursor);
-
+    /*for debugging*/
+    /*printf("number of nodes:  %d", cursor);*/
 
     printf("Print in order\n");
     printinorder(bt);
