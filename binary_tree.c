@@ -1,6 +1,9 @@
-//
-// Created by njayj on 3/13/2019.
-//
+/* Project 7: Binary Search Tree
+Nick Crepeau 
+Cody Wood 
+Ethan Rocheleau 
+Nate Johnson
+*/
 
 #include "binary_tree.h"
 #include <stdbool.h>

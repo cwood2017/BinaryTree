@@ -1,3 +1,10 @@
+/* Project 7: Binary Search Tree
+Nick Crepeau 
+Cody Wood 
+Ethan Rocheleau 
+Nate Johnson
+*/
+
 #ifndef binaryTree_H
 #define binaryTree_H
 #include <stdbool.h>

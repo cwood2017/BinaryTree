@@ -1,3 +1,10 @@
+/* Project 7: Binary Search Tree
+Nick Crepeau 
+Cody Wood 
+Ethan Rocheleau 
+Nate Johnson
+*/
+
 #include <stdio.h>
 #include "binary_tree.h"
 #include <string.h> /*for strlen if needed later */
