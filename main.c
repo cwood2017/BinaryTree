@@ -13,7 +13,6 @@ Nate Johnson
 
 int main(int argc, char* argv[]) {
     FILE *inFile = NULL; // File pointer
-    /* TODO change to malloc based on strlen of arg[1] */
     binary_tree* bt;
     bt=malloc(sizeof(struct binary_tree_struct));
     initialize(bt);
@@ -28,20 +27,20 @@ int main(int argc, char* argv[]) {
     int cursor = 0;
     int i;
 
+    /* error check for correct number of arguments (should be 2) */
     if (argc != 2) {
-        printf("The number of command line arguments is wrong.");
+        printf("The number of command line arguments is wrong.\n");
         exit(1);
     }
-
 /* Get filename from argument and open it*/
     strcpy(fileName, argv[1]);
     inFile = fopen(fileName, "r");
 /* error if can't open file */
     if (inFile == NULL) {
-        printf("Could not open file.");
+        printf("Could not open file.\n");
         exit(1); // -1 indicates error
     }
-/* load nodes into nodeList array */
+/* load numbers into nodeList array */
 /* note: we can load directly into our binary tree  */
     while (!feof(inFile)) {
         if (endOfFile != 0) {
@@ -56,7 +55,7 @@ int main(int argc, char* argv[]) {
     }
     /*for debugging*/
     /*printf("number of nodes:  %d", cursor);*/
-
+    /* test methods assigned */
     printf("Print in order\n");
     printinorder(bt);
     printf("\nPrint pre order\n");

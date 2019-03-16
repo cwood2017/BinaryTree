@@ -8,5 +8,5 @@ binary_tree.o: binary_tree.c binary_tree.h
 	gcc -Wall -c binary_tree.c binary_tree.h
 
 clean:
-	rm *.o final.exe
+	rm *.o final.exe output*.txt
 	ls

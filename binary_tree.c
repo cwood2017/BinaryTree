@@ -35,7 +35,6 @@ bool search(binary_tree* bt, int key) {
 
 void insert(binary_tree* bt, int item) {
     int flag = 0;
-    int last;
     node *newNode;
     newNode = (node*)malloc(sizeof(node));
     node *cursor;
@@ -105,18 +104,17 @@ void insert(binary_tree* bt, int item) {
                     flag = 5;
                     bt->size++;
                 } else {
+                    /*  case 6 */
                     cursor = cursor->right;
                 }
             }
         }
-
-
     }
     /* for debug  */
     /* printf("inserted %d,  flag  %d\n", newNode->data, flag); */
 }
 
-
+/*helper method for printpreorder */
 void preOrder(node* curr){
 if(curr == NULL){
     return;
@@ -126,13 +124,14 @@ preOrder(curr->left);
 preOrder(curr->right);
 
 }
+/* printpreorder depends on preorder*/
 void printpreorder(binary_tree* bt){
     node* curr = bt->root;
     preOrder(curr);
 
 
 }
-
+/*helper method for printinorder */
 void pOrder(node* curr) {
     if(curr == NULL){
         return;
@@ -142,6 +141,7 @@ void pOrder(node* curr) {
     pOrder(curr->right);
 
 }
+/* printinorder depends on porder*/
 void printinorder(binary_tree* bt){
     node* curr = bt->root;
     pOrder(curr);
@@ -149,6 +149,7 @@ void printinorder(binary_tree* bt){
     return;
 
 }
+/*helper method for printpostorder */
 void ptorder(node* curr){
     if(curr == NULL){
         return;
@@ -157,6 +158,7 @@ void ptorder(node* curr){
     ptorder(curr->right);
     printf("%d ", curr->data);
 }
+/* printpostorder depends on ptorder*/
 void printpostorder(binary_tree* bt){
     node* curr = bt->root;
     ptorder(curr);
@@ -164,12 +166,12 @@ void printpostorder(binary_tree* bt){
     return;
 }
 
-
+/*helper method for recurse tree */
 int max(int a, int b) {
     if (a>b) return a;
     else return b;
 }
-
+/*helper method to calculate tree height */
 int recurseTree(node* n) {
     int left = 0;
     int right = 0;
@@ -179,7 +181,7 @@ int recurseTree(node* n) {
     return max(left,right)+1;
 
 }
-
+/* tree height depends on recurseTree and max*/
 int treeheight(binary_tree* bt) {
     int height;
     height = recurseTree(bt->root);
