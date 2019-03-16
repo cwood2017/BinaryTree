@@ -4,3 +4,6 @@
 .idea/
 cmake-build-debug/
 CMakeLists.txt
+output.txt
+output1.txt
+output2.txt
