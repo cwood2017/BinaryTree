@@ -42,12 +42,12 @@ int main(int argc, char* argv[]) {
             cursor++;
         }
     }
-    /*for debugging- delete in final version*/
+    /*move from array into tree*/
     for (i=0; i<cursor; i++) {
         insert(bt,nodeList[i]);
     }
     /*for debugging- delete in final version*/
-    printf("number of nodes:  %d", cursor);
+    /*printf("number of nodes:  %d", cursor);*/
 
 
     printf("Print in order\n");
