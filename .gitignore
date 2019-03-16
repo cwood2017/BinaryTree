@@ -7,3 +7,5 @@ CMakeLists.txt
 output.txt
 output1.txt
 output2.txt
+*.o
+final.exe
